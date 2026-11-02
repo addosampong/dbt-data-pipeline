@@ -9,7 +9,7 @@
 An end-to-end **analytics engineering** project that ingests ~1 year of raw job-postings data (Parquet), loads it into a local **DuckDB** warehouse, and transforms it with **dbt** into tested, documented analytics models — all orchestrated and deployed via **GitHub Actions**.
 
 🔗 **GitHub Repository:** [`GitHub Repo`](https://github.com/addosampong/dbt-data-pipeline) <!-- TODO: replace with repo URL -->
-📖 **dbt Docs (GitHub Pages):** [`Pipeline Docs on GitHub Pages`](<GITHUB_PAGES_DOCS_URL>) <!-- TODO: replace with GitHub Pages URL -->
+📖 **dbt Docs (GitHub Pages):** [`Pipeline Docs on GitHub Pages`](https://addosampong.github.io/dbt-data-pipeline/) <!-- TODO: replace with GitHub Pages URL -->
 
 ---
 
