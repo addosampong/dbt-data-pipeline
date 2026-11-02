@@ -25,4 +25,4 @@ jobs:
           gh release create warehouse --notes "Automated release for dbt build" || true
           gh release upload warehouse data/prod.duckdb --clobber || true
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ github.token }}
