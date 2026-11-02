@@ -1,0 +1,28 @@
+name: dbt-build
+on:
+  push:
+    branches:
+      - main
+  schedule:
+      - cron: '17 6 * * 1'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+    contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: uv run python scripts/download_data.py
+      - run: uv run dbt build --profiles-dir ../ci
+        working-directory: analytics
+      - run: |
+          gh release create warehouse --notes "Automated release for dbt build" || true
+          gh release upload warehouse data/prod.duckdb --clobber || true
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
