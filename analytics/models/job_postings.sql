@@ -10,4 +10,4 @@ SELECT
 	search_term,
 	search_location
 FROM '../data/raw/raw_job_postings_*.parquet'
-where error is null
+WHERE error IS NULL
