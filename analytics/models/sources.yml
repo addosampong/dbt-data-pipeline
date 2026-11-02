@@ -1,0 +1,8 @@
+sources:
+  - name: raw
+    description: "Source for job postings data scraped from various job boards"
+    tables:
+      - name: job_postings
+        description: "Table containing job postings"
+        config:
+          external_location: "read_parquet('../data/raw/raw_job_postings_*.parquet')"
